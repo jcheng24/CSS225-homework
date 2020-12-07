@@ -1,0 +1,116 @@
+#import anything you need here
+import main_character as mc
+import the_woman as sc1
+import random
+
+
+def start(player):
+    #walking through town
+    print("As you are walking through town, you see many people are outside")
+    input()
+    print("Then you noticed a shady woman just standing around")
+    input()
+    print("She noticed you staring at her then she points")
+    input()
+    print("You look behind you and see a shop")
+    input()
+    print("Then you look back to the woman and she had disappeared")
+    input()
+    print("And you have decided to...")
+    input()
+    which_way = input("What would you like to do?\n\"S\" - Go to the Shop\n\"L\" - Look for the woman\n\"I\" - Ignore what had happened\n\"W\" - Walk away")
+    input()
+    
+    #picking to look for the woman
+    if which_way == 'L':
+        print("You have to decide to look for the woman")
+        input()
+        print(player.name,": Where did that woman go?")
+        input()
+        print("You walk to the spot where the woman was standing and look around")
+        input()
+        print("You walk in the direction that you think the woman had walked off")
+        input()
+        print("As you are walking, you found the woman, and you walk up to her")
+        input()
+        print("She said nothing and just hand you a",sc1.the_woman.inventory)
+        #removing from list
+        sc1.the_woman.inventory.remove('card')
+        #adding to list
+        player.inventory.append("card")
+        input()
+        print("You have received a ['card']")
+        print("Inventory:",player.inventory)
+        input()
+        print("You see that the card leads you to a shop")
+        input()
+        print("You walk towards the shop")
+        input()
+        print("You got to the front of the shop and you look up")
+        input()
+        print("The shop is called 'A Faction of your Fantasy'")
+        input()
+
+    #picking to ignore your interaction with the woman
+    elif which_way == 'I':
+        print("You have decide to ignore all of that")
+        input()
+        print(player.name,": Yeah, I'm just going to ignore that...")
+        input()
+        print("You continue to walk faller into town and look at some shops")
+        input()
+        print("As you turn your head, you see the same woman again, but this time she has a big sign with her")
+        input()
+        print("The sign has an arrow pointing towards a direction back to where you first saw the woman")
+        input()
+        print("You decide to walk to the direction of where the arrow was pointing")
+        input()
+        print("You saw the same shop as before you walked off")
+        input()
+        print("The shop is called 'A Faction of your Fantasy'")
+        input()
+
+    #picking to walk away 
+    elif which_way == 'W':
+        print("You have decide to walk away")
+        input()
+        print(player.name,": Yeah, no.")
+        input()
+        print("You are about to walk off when you stepped on a banana peel and slipped")
+        player.hp -= random.randint(5,8)
+        input()
+        print("Health:",player.hp)
+        input()
+        print("You just get up and walk faller into town")
+        input()
+        print("As you are walking, someone bump into you")
+        input()
+        print("It tooke a while but you realize there was something in your pocket")
+        input()
+        print("There is a card")
+        sc1.the_woman.inventory.remove('card')
+        player.inventory.append("card")
+        input()
+        print("Inventory:",player.inventory)
+        input()
+        print("You have received a", mc.main_character.inventory)
+        input()
+        print("You see that the card leads you to a shop")
+        input()
+        print("You walk towards to the shop")
+        input()
+        print("You got in front of the shop and look up")
+        input()
+        print("The shop is called 'A Fraction of your Fantasy'")
+        input()
+        
+    #this choice is going to the Shop   
+    else:
+        print(player.name,": I think I should check out the shop.")
+        input()
+        print("You start walking towards the shop")
+        input()
+        print("You got to the front of the shop and you look up")
+        input()
+        print("The shop is called 'A Faction of your Fantasy'")
+        input()
